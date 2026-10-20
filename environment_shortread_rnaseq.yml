@@ -1,0 +1,11 @@
+name: rnaseq
+channels:
+  - conda-forge
+  - bioconda
+dependencies:
+  - python>=3.8
+  - fastqc          # read QC (needs Java; the conda package brings openjdk)
+  - fastp           # adapter trimming (default settings, JSON + HTML report)
+  - star=2.7.10a    # alignment; the genome index must be built with the same version
+  - salmon          # quantification (-l A --validateMappings)
+  - samtools        # BAM indexing
